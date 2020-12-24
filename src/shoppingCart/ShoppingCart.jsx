@@ -123,7 +123,7 @@ export default class ShoppingCart extends Component {
                 </div>
                 <CheckoutModal showModal={this.state.ischeckout}>
                     <p className='close' onClick={this.updateCheckout}>X</p>
-                    <p className='infoText'>Transaction Successful !</p>
+                    <p className='infoText'>Transaction Successful !!!</p>
                     <p className='valueText'>Total Price: ₹{this.state.totalPrice}</p>
 
                 </CheckoutModal>
