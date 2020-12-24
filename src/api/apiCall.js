@@ -1,6 +1,6 @@
 
 export function getProducts() {
-    return fetch('Shopping-Cart/products.json',{
+    return fetch('products.json',{
         headers: {
             'CrossDomain':true,
             'Content-Type': 'application/json',

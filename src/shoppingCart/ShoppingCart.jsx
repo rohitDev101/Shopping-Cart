@@ -46,16 +46,16 @@ export default class ShoppingCart extends Component {
         let totalCount = this.state.totalCount;
         let totalPrice = this.state.totalPrice;
         const index = countProductArr.findIndex(el => el.id === id);
-        if(action == 'add'){
+        if(action === 'add'){
             countProductArr[index].count += 1;
             totalCount += 1;
             totalPrice += countProductArr[index].price;
-        }else if (action=='remove' &&countProductArr[index].count > 0){
+        }else if (action==='remove' &&countProductArr[index].count > 0){
             countProductArr[index].count -= 1;
             totalCount -= 1;
             totalPrice -= countProductArr[index].price;
             console.log(this.state.countProduct);
-        }else if( action =='addToCart' && countProductArr[index].count == 0){
+        }else if( action ==='addToCart' && countProductArr[index].count === 0){
             countProductArr[index].count += 1;
             totalCount += 1;
             totalPrice += countProductArr[index].price;
