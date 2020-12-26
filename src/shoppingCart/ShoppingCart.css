@@ -143,3 +143,9 @@ p {
         height: 100px;
     }
 }
+
+@media only screen and (max-width: 420px){
+    .addCart button{
+        display: block;
+    }
+}

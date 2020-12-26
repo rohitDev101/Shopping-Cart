@@ -18,6 +18,7 @@ export default class ShoppingCart extends Component {
     }
 
     componentDidMount(){
+        console.log(process.env.NODE_ENV);
         getProducts().then(response => response.json())
         .then(data => {
           console.log('Success:', data);
@@ -85,14 +86,14 @@ export default class ShoppingCart extends Component {
             return (<div className="gridContainer">
                 <div>
                     <img src={item.imageUrl} alt='Product'></img>
-                    <p style={{'font-size':'larger', 'fontFamily':'sans-serif', 'fontStyle':'italic'}}>{item.offerText}</p>
+                    <p style={{'fontSize':'larger', 'fontFamily':'sans-serif', 'fontStyle':'italic'}}>{item.offerText}</p>
                 </div>
                 <div>
                     <p className='Brand'>{item.brandName}</p>
                     <p style={{'fontStyle': 'italic'}}>{item.productName}</p>
                     <p>{item.quantity}</p>
                     <p>MRP ₹{item.mrp}</p>
-                    <p style={{'font-weight':'bold'}}>₹{item.price}</p>
+                    <p style={{'fontWeight':'bold'}}>₹{item.price}</p>
                     <div className='addCart'>
                         <button className='checkoutbtn' onClick={()=>{this.updateCounts(item.id,'addToCart')}}>Add To Cart</button>
                         <span onClick={()=>this.updateCounts(item.id,'add')} className='itemIcon'>+</span>
@@ -125,7 +126,6 @@ export default class ShoppingCart extends Component {
                     <p className='close' onClick={this.updateCheckout}>X</p>
                     <p className='infoText'>Transaction Successful !</p>
                     <p className='valueText'>Total Price: ₹{this.state.totalPrice}</p>
-
                 </CheckoutModal>
             </div>
         )
